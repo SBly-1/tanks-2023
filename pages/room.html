@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tank Battle</title>
+    <link href="../static/css/room.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+        }
+
+        #game-board {
+            /* margin: auto; */
+            position: absolute;
+            overflow: hidden;
+            /* background-color: #ddd; */
+            background: url(../static/image/zemlyaNew.png);
+            box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.411), -15px -15px 25px rgba(0, 0, 0, 0.411), 15px -15px 25px rgba(0, 0, 0, 0.411), -15px 15px 25px rgba(0, 0, 0, 0.411);
+        }
+
+        .brick {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+        }
+        
+        .tank {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+        }
+
+        .botShell {
+            width: 12px;
+            height: 14px;
+            position: absolute;
+        }
+
+        .bullet {
+            width: 12px;
+            height: 14px;
+            position: absolute;
+        }
+
+        .explosion {
+            position: absolute;
+            z-index: 6;
+        }
+
+        .botShotExplosion {
+            position: absolute;
+        }
+
+        .bot1 {
+            position: absolute;
+        }
+
+        .tankExplosion {
+            position: absolute;
+        }
+    </style>
+    <script src="../static/js/multiplayer.js"></script>
+</head>
+<body>
+    <p id="win_text" class="win-text hidden">Кто-то победил</p>
+    <div class="room-data">
+        <p class="room-data__name">{{ .RoomName }}</p>
+        <p id="level_name" class="room-data__level-name"></p>
+    </div>
+    <p id="room" style="position: absolute; visibility: hidden;">{{ .RoomKey }}</p>
+    <div class="background"> 
+        <div id="game-board"></div>
+    </div>
+    <div id="lives" class="tank-live">
+    </div>
+    <button class="exit-btn" onclick="exit()">Выйти</button>
+</body>
+</html>

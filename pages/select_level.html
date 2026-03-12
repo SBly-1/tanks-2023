@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="../static/css/select_level.css" rel="stylesheet">
+    <script defer src="../static/js/level_select.js"></script>
+    <title>Выбор уровня</title>
+</head>
+<body>
+    <div class="background">
+        <a class="comment">Выберите карту:</a>
+        <div class="container">
+            <div class="level-list">
+                {{ range .LevelData }}
+                    <button class="level-item" id="{{ .Id }}" size="{{ .Size }}" levelname="{{ .Name }}" name="level">{{ .Name }}</button>
+                {{ end }}
+            </div>
+            <div class="workspace">
+                <p id="level_name" class="name"></p>
+                <div id="level_field" class="field">
+                </div>
+            </div>
+            <div class="level-details">
+                <button class="back-button" onclick="back()">Назад</button>
+                <button class="play-button" onclick="play()">Играть</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
